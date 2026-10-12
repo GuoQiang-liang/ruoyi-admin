@@ -115,6 +115,11 @@ services:
       LOGGING_LEVEL_ORG_RUOYI: info
       LOGGING_LEVEL_ORG_SPRINGFRAMEWORK: warn
       SYS_UPLOAD_PATH: /ruoyi/upload
+      # Weaviate 在 Docker 网络内使用服务名访问
+      VECTOR_STORE_TYPE: weaviate
+      VECTOR_STORE_WEAVIATE_PROTOCOL: http
+      VECTOR_STORE_WEAVIATE_HOST: weaviate:8080
+      VECTOR_STORE_WEAVIATE_CLASSNAME: LocalKnowledge
     volumes:
       - logs-data:/ruoyi/server/logs
       - upload-data:/ruoyi/upload
